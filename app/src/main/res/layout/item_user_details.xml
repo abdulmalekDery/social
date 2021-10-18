@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="userItem"
+            type="com.tessafold.social.features.postdetails.IUserItem" />
+    </data>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:cardElevation="4dp"
+        android:id="@+id/user_item_view_group"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="16dp"
+            >
+
+
+            <ImageView
+                android:id="@+id/user_image_view"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/user_name_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                app:layout_constraintTop_toTopOf="@id/user_image_view"
+                app:layout_constraintStart_toEndOf="@id/user_image_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="lorem ipsum"
+                android:text="@{userItem.name}"
+                android:textColor="@color/black"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="16dp"
+                android:textSize="18sp"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif-condensed-medium"/>
+
+            <TextView
+                android:id="@+id/last_presented_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                app:layout_constraintStart_toEndOf="@id/user_image_view"
+                app:layout_constraintTop_toBottomOf="@id/user_name_text_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="@{`\u0040` + userItem.userName}"
+                tools:text="\u0040username"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="16dp"
+                android:textSize="15sp"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif-condensed-medium"/>
+
+            <TextView
+                android:id="@+id/contact_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/user_image_view"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/contact_info"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:textSize="18sp"
+                />
+
+            <TextView
+                android:id="@+id/email_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/contact_info"
+                android:layout_marginStart="16dp"
+                android:text="@string/email"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif-condensed"
+                />
+
+            <TextView
+                android:id="@+id/email_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintStart_toEndOf="@id/email_title"
+                app:layout_constraintTop_toBottomOf="@id/contact_info"
+                android:layout_marginStart="4dp"
+                android:text="@{userItem.email}"
+                tools:text="loremipsum@gmail.com"
+                android:layout_marginTop="8dp"
+                android:fontFamily="sans-serif-condensed"
+                />
+
+            <TextView
+                android:id="@+id/phone_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/email_title"
+                android:layout_marginStart="16dp"
+                android:text="@string/phone"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif-condensed"
+                />
+
+            <TextView
+                android:id="@+id/phone_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintStart_toEndOf="@id/phone_title"
+                app:layout_constraintTop_toBottomOf="@id/email_title"
+                android:layout_marginStart="4dp"
+                android:text="@{userItem.phone}"
+                tools:text="+15-4455-1544"
+                android:layout_marginTop="4dp"
+                android:fontFamily="sans-serif-condensed"
+                />
+
+            <TextView
+                android:id="@+id/website_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/phone_title"
+                android:layout_marginStart="16dp"
+                android:text="@string/website"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif-condensed"
+                />
+
+            <TextView
+                android:id="@+id/website_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintStart_toEndOf="@id/website_title"
+                app:layout_constraintTop_toBottomOf="@id/phone_title"
+                android:layout_marginStart="4dp"
+                android:text="@{userItem.website}"
+                tools:text="www.somename.com"
+                android:layout_marginTop="4dp"
+                android:fontFamily="sans-serif-condensed"
+                />
+
+            <TextView
+                android:id="@+id/address_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/website_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/address_info"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:textSize="18sp"
+                />
+
+            <TextView
+                android:id="@+id/street_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/address_info"
+                android:layout_marginStart="16dp"
+                android:text="@string/street"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif-condensed"
+                />
+
+            <TextView
+                android:id="@+id/street_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintStart_toEndOf="@id/street_title"
+                app:layout_constraintTop_toBottomOf="@id/address_info"
+                android:layout_marginStart="4dp"
+                android:text="@{userItem.addressStreet}"
+                tools:text="algadida street"
+                android:layout_marginTop="8dp"
+                android:fontFamily="sans-serif-condensed"
+                />
+
+            <TextView
+                android:id="@+id/suite_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/street_title"
+                android:layout_marginStart="16dp"
+                android:text="@string/suite"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif-condensed"
+                />
+
+            <TextView
+                android:id="@+id/suite_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintStart_toEndOf="@id/suite_title"
+                app:layout_constraintTop_toBottomOf="@id/street_value"
+                android:layout_marginStart="4dp"
+                android:text="@{userItem.addressSuite}"
+                tools:text="algadida suite"
+                android:layout_marginTop="8dp"
+                android:fontFamily="sans-serif-condensed"
+                />
+
+
+            <TextView
+                android:id="@+id/city_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/suite_title"
+                android:layout_marginStart="16dp"
+                android:text="@string/city"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif-condensed"
+                />
+
+            <TextView
+                android:id="@+id/city_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintStart_toEndOf="@id/city_title"
+                app:layout_constraintTop_toBottomOf="@id/suite_value"
+                android:layout_marginStart="4dp"
+                android:text="@{userItem.addressCity}"
+                tools:text="Aleppo"
+                android:layout_marginTop="8dp"
+                android:fontFamily="sans-serif-condensed"
+                />
+
+
+            <TextView
+                android:id="@+id/zip_code_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/city_title"
+                android:layout_marginStart="16dp"
+                android:text="@string/zip_code"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif-condensed"
+                />
+
+            <TextView
+                android:id="@+id/zip_code_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintStart_toEndOf="@id/zip_code_title"
+                app:layout_constraintTop_toBottomOf="@id/city_value"
+                android:layout_marginStart="4dp"
+                android:text="@{userItem.addressZipcode}"
+                tools:text="002"
+                android:layout_marginTop="8dp"
+                android:fontFamily="sans-serif-condensed"
+                />
+
+            <TextView
+                android:id="@+id/company_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/zip_code_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/company_info"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:textSize="18sp"
+                />
+
+            <TextView
+                android:id="@+id/company_name_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/company_info"
+                android:layout_marginStart="16dp"
+                android:text="@string/name"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif-condensed"
+                />
+
+            <TextView
+                android:id="@+id/company_name_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintStart_toEndOf="@id/company_name_title"
+                app:layout_constraintTop_toBottomOf="@id/company_info"
+                android:layout_marginStart="4dp"
+                android:text="@{userItem.companyName}"
+                tools:text="Faco"
+                android:layout_marginTop="8dp"
+                android:fontFamily="sans-serif-condensed"
+                />
+
+
+            <TextView
+                android:id="@+id/company_bs_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/company_name_title"
+                android:layout_marginStart="16dp"
+                android:text="@string/bs"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif-condensed"
+                />
+
+            <TextView
+                android:id="@+id/company_bs_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintStart_toEndOf="@id/company_bs_title"
+                app:layout_constraintTop_toBottomOf="@id/company_name_title"
+                android:layout_marginStart="4dp"
+                android:text="@{userItem.companyBs}"
+                tools:text="Faco"
+                android:layout_marginTop="8dp"
+                android:fontFamily="sans-serif-condensed"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>

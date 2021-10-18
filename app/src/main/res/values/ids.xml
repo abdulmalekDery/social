@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="item_header" type="id" />
+    <item name="item_post" type="id" />
+    <item name="item_user_profile" type="id" />
+    <item name="item_comment" type="id" />
+
+
+</resources>

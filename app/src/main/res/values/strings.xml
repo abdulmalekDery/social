@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Social</string>
+    <string name="first_time_presented">First time:</string>
+    <string name="contact_info">Contact Info:</string>
+    <string name="email">Email:</string>
+    <string name="phone">Phone:</string>
+    <string name="website">Website:</string>
+    <string name="address_info">Address Info:</string>
+    <string name="street">Street:</string>
+    <string name="suite">Suite:</string>
+    <string name="city">City:</string>
+    <string name="zip_code">Zip Code:</string>
+    <string name="company_info">Company Info:</string>
+    <string name="name">Name:</string>
+    <string name="bs">BS:</string>
+    <string name="network_error">Network Error</string>
+    <string name="local_error">Local Error</string>
+    <string name="written_by">Publisher Info:</string>
+    <string name="comments">Comments:</string>
+    <string name="post_details">Post Details</string>
+    <string name="posts">Posts</string>
+</resources>

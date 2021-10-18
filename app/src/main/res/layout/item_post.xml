@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="postItem"
+            type="com.tessafold.social.features.posts.IPostItem" />
+    </data>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:cardElevation="4dp"
+        android:id="@+id/post_item_view_group"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="16dp"
+            >
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/user_image"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/user_name_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                app:layout_constraintTop_toTopOf="@id/user_image"
+                app:layout_constraintStart_toEndOf="@id/user_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="lorem ipsum"
+                android:text="@{postItem.posterName}"
+                android:textColor="@color/black"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="16dp"
+                android:textSize="16sp"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif-condensed-medium"/>
+
+            <TextView
+                android:id="@+id/last_presented_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/user_image"
+                app:layout_constraintTop_toBottomOf="@id/user_name_text_view"
+                android:text="@{`\u0040` + postItem.posterUserName}"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="16dp"
+                android:textSize="14sp"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif-condensed-medium"/>
+
+
+<!--            <TextView-->
+<!--                android:id="@+id/last_presented_value_text_view"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:maxLines="1"-->
+<!--                app:layout_constraintStart_toEndOf="@id/last_presented_text_view"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/user_name_text_view"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                android:text="@{postItem.firstTimePresented}"-->
+<!--                tools:text="17-07-2021 12:40:44"-->
+<!--                android:layout_marginStart="4dp"-->
+<!--                android:layout_marginEnd="16dp"-->
+<!--                android:textSize="13sp"-->
+<!--                android:ellipsize="end"-->
+<!--                android:fontFamily="sans-serif-condensed-medium"/>-->
+
+            <TextView
+                android:id="@+id/post_title_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/user_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="sunt aut facere repellat provident occaecati excepturi optio reprehenderit"
+                android:text="@{postItem.title}"
+                android:gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp"
+                android:textSize="16sp"
+                android:ellipsize="end"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif-condensed-medium"/>
+
+            <TextView
+                android:id="@+id/post_body_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:maxLines="6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/post_title_text_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+                android:text="@{postItem.body}"
+                android:gravity="start"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp"
+                android:textSize="14sp"
+                android:ellipsize="end"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif-condensed"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>
