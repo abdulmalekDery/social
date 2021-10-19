@@ -1,9 +1,7 @@
 package com.tessafold.social.models.local.dao
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.lifecycle.LiveData
+import androidx.room.*
 import com.tessafold.social.models.local.models.PostDB
 
 @Dao
@@ -11,6 +9,9 @@ interface PostDBDao {
 
     @Query("SELECT * FROM post_table")
     fun getPosts(): List<PostDB>
+
+    @Query("SELECT * FROM post_table")
+    fun observeAllPosts(): LiveData<List<PostDB>>
 
     @Query("SELECT * FROM post_table WHERE id = :id")
     fun getPost(id: Int): PostDB
@@ -23,5 +24,8 @@ interface PostDBDao {
 
     @Query("DELETE FROM post_table")
     suspend fun deleteAll()
+
+    @Delete
+    suspend fun deletePost(post: PostDB)
 
 }
